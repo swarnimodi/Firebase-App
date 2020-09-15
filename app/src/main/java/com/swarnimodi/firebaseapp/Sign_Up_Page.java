@@ -37,7 +37,7 @@ public class Sign_Up_Page extends AppCompatActivity{
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if(user != null){
-                    Intent i = new Intent(Sign_Up_Page.this, MainActivity.class);
+                    Intent i = new Intent(Sign_Up_Page.this, Register.class);
                     startActivity(i);
                     finish();
                 }
@@ -45,7 +45,7 @@ public class Sign_Up_Page extends AppCompatActivity{
         };
     }
 
-    public void go_to_main(View view){
+    public void go_to_register(View view){
 
         String email = email_up.getText().toString();
         String pass = pass_up.getText().toString();
