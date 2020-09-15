@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#cbaf87">
+
+    <TextView
+        android:id="@+id/or_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="go_to_sign_up"
+        android:outlineProvider="none"
+        android:text="@string/or_sign_up"
+        android:textColor="#30475e"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/email_in"
@@ -12,12 +25,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
         android:ems="10"
-        android:hint="Enter email"
+        android:hint="@string/enter_email"
         android:inputType="textEmailAddress"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView"
@@ -25,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="23dp"
-        android:text="Sign In"
+        android:text="@string/sign_in"
         android:textColor="#30475e"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,12 +51,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:hint="Enter password"
+        android:hint="@string/enter_password"
         android:inputType="textPassword"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_in" />
+        app:layout_constraintTop_toBottomOf="@+id/email_in"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/button"
@@ -51,7 +66,7 @@
         android:layout_marginTop="60dp"
         android:backgroundTint="#30475E"
         android:onClick="enter_main"
-        android:text="Submit"
+        android:text="@string/submit"
         android:textColor="#cbaf87"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

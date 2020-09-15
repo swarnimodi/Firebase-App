@@ -45,7 +45,7 @@ public class Sign_Up_Page extends AppCompatActivity{
         };
     }
 
-    public void go_to_sign_in(View view){
+    public void go_to_main(View view){
 
         String email = email_up.getText().toString();
         String pass = pass_up.getText().toString();

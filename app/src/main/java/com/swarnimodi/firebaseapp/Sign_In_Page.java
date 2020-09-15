@@ -44,6 +44,11 @@ public class Sign_In_Page extends AppCompatActivity {
         };
     }
 
+    public void go_to_sign_up(View view) {
+        startActivity(new Intent(Sign_In_Page.this, Sign_Up_Page.class));
+        finish();
+    }
+
     public void enter_main(View view){
         String Email = email_in.getText().toString();
         String Pass = pass_in.getText().toString();

@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="23dp"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textColor="#30475E"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,12 +23,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
         android:ems="10"
-        android:hint="Enter email"
+        android:hint="@string/enter_email"
         android:inputType="textEmailAddress"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/pass_up"
@@ -36,12 +37,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:hint="Enter password"
+        android:hint="@string/enter_password"
         android:inputType="textPassword"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_up" />
+        app:layout_constraintTop_toBottomOf="@+id/email_up"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/verify"
@@ -49,12 +51,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:hint="Verify Password"
+        android:hint="@string/verify_password"
         android:inputType="textPassword"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass_up" />
+        app:layout_constraintTop_toBottomOf="@+id/pass_up"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/button2"
@@ -62,8 +65,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:backgroundTint="#30475E"
-        android:onClick="go_to_sign_in"
-        android:text="Submit"
+        android:onClick="go_to_main"
+        android:text="@string/submit"
         android:textColor="#CBAF87"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
