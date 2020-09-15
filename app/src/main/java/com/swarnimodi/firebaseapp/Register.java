@@ -1,6 +1,5 @@
 package com.swarnimodi.firebaseapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,9 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -22,7 +19,6 @@ public class Register extends AppCompatActivity {
     private String userId;
 
     FirebaseAuth mAuth;
-    FirebaseAuth.AuthStateListener firebaseAuthStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +33,6 @@ public class Register extends AppCompatActivity {
         age = findViewById(R.id.age);
         phone_number = findViewById(R.id.phone_number);
         radioGroup = findViewById(R.id.radioGroup);
-
-        firebaseAuthStateListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if(user != null){
-                    Intent i = new Intent(Register.this, MainActivity.class);
-                    startActivity(i);
-                    finish();
-                }
-            }
-        };
     }
 
     public void go_to_main(View view) {
@@ -67,5 +51,9 @@ public class Register extends AppCompatActivity {
         currentUserDb.child("Name").setValue(name);
         currentUserDb.child("Age").setValue(user_age);
         currentUserDb.child("Number").setValue(number);
+
+        Intent i = new Intent(Register.this, MainActivity.class);
+        startActivity(i);
+        finish();
     }
 }
