@@ -20,7 +20,7 @@ public class Sign_In_Page extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener firebaseAuthStateListener;
-    EditText email_in, pass_in;
+    private EditText email_in, pass_in;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +50,8 @@ public class Sign_In_Page extends AppCompatActivity {
     }
 
     public void enter_main(View view){
-        String Email = email_in.getText().toString();
-        String Pass = pass_in.getText().toString();
+        final String Email = email_in.getText().toString();
+        final String Pass = pass_in.getText().toString();
 
         if(TextUtils.isEmpty(Email)||TextUtils.isEmpty(Pass)) {
             Toast.makeText(Sign_In_Page.this, "Empty Field", Toast.LENGTH_SHORT).show();

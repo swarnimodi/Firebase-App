@@ -18,9 +18,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Sign_Up_Page extends AppCompatActivity{
 
+    private EditText email_up, pass_up, verify;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener firebaseAuthStateListener;
-    EditText email_up, pass_up, verify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -38,6 +38,8 @@ public class Sign_Up_Page extends AppCompatActivity{
                 final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if(user != null){
                     Intent i = new Intent(Sign_Up_Page.this, Register.class);
+                    String userId = mAuth.getCurrentUser().getUid();
+                    i.putExtra("userId", userId);
                     startActivity(i);
                     finish();
                 }
@@ -47,9 +49,9 @@ public class Sign_Up_Page extends AppCompatActivity{
 
     public void go_to_register(View view){
 
-        String email = email_up.getText().toString();
-        String pass = pass_up.getText().toString();
-        String confirm = verify.getText().toString();
+        final String email = email_up.getText().toString();
+        final String pass = pass_up.getText().toString();
+        final String confirm = verify.getText().toString();
 
         if(!(pass.equals(confirm))){
             Toast.makeText(this, "Passwords not matching", Toast.LENGTH_SHORT).show();
